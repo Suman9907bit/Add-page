@@ -255,64 +255,85 @@ Contact us today and move forward on the path of digital future.<br><br>
 
 
          
-            
-<!-- Call Button -->
-<a href="tel:+919907992247" class="call-float" title="Call Now">
-  <img src="https://img.icons8.com/ios-filled/50/ff0000/phone.png" alt="Call" class="call-icon">
-</a>
-</br><br>
-<!-- WhatsApp Button -->
-<a href="https://wa.me/919907992247" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
-  <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" class="whatsapp-icon">
-</a>
+<!-- Scroll to Top Button -->
+<button onclick="scrollToTop()" id="scrollBtn" title="Go to top">↑</button>
 
-<!-- CSS Style -->
+<!-- Floating Contact Menu -->
+<div class="contact-menu">
+  <a href="tel:+919907992247" title="Call Now">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" alt="Call">
+  </a>
+  <a href="https://wa.me/919907992247" target="_blank" title="WhatsApp">
+    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp">
+  </a>
+</div>
+
+<!-- CSS -->
 <style>
-/* Common button style */
-.call-float, .whatsapp-float {
+/* Scroll to Top Button */
+#scrollBtn {
+  display: none;
   position: fixed;
+  bottom: 150px;
   right: 20px;
+  z-index: 999;
+  font-size: 18px;
+  background-color: #333;
+  color: white;
+  border: none;
   border-radius: 50%;
-  padding: 10px;
-  z-index: 1000;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
+  padding: 10px 14px;
+  cursor: pointer;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+#scrollBtn:hover {
+  background-color: #555;
 }
 
-/* Call button specific */
-.call-float {
-  bottom: 90px;
-  background-color: red;
-  animation: pulse 2s infinite;
-}
-
-/* WhatsApp button specific */
-.whatsapp-float {
+/* Floating Contact Menu */
+.contact-menu {
+  position: fixed;
   bottom: 20px;
-  background-color: #25d366;
+  left: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-menu a {
+  background-color: red;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
   animation: pulse 2s infinite;
 }
 
-.call-icon, .whatsapp-icon {
+.contact-menu img {
   width: 30px;
   height: 30px;
-  background-color: white;
-  border-radius: 50%;
-  padding: 5px;
-}
-
-.call-float:hover, .whatsapp-float:hover {
-  transform: scale(1.1);
 }
 
 /* Pulse Animation */
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(0,0,0,0.3); }
-  70% { box-shadow: 0 0 0 15px rgba(0,0,0,0); }
-  100% { box-shadow: 0 0 0 0 rgba(0,0,0,0); }
+  0% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.6); }
+  70% { box-shadow: 0 0 0 15px rgba(255, 0, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
 }
 </style>
 
+<!-- JS for Scroll Button -->
+<script>
+window.onscroll = function () {
+  document.getElementById("scrollBtn").style.display = 
+    (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) 
+    ? "block" : "none";
+};
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
 
 
 
