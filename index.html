@@ -260,10 +260,10 @@ Contact us today and move forward on the path of digital future.<br><br>
 
 <!-- Floating Contact Menu -->
 <div class="contact-menu">
-  <a href="tel:+919907992247" title="Call Now">
+  <a href="tel:+919907992247" title="Call Now" class="call-btn">
     <img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" alt="Call">
   </a>
-  <a href="https://wa.me/919907992247" target="_blank" title="WhatsApp">
+  <a href="https://wa.me/919907992247" target="_blank" title="WhatsApp" class="whatsapp-btn">
     <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp">
   </a>
 </div>
@@ -301,12 +301,22 @@ Contact us today and move forward on the path of digital future.<br><br>
   gap: 15px;
 }
 
+/* Individual Buttons */
 .contact-menu a {
-  background-color: red;
   padding: 10px;
   border-radius: 50%;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
   animation: pulse 2s infinite;
+}
+
+/* Call: Red */
+.call-btn {
+  background-color: red;
+}
+
+/* WhatsApp: Green */
+.whatsapp-btn {
+  background-color: #25D366;
 }
 
 .contact-menu img {
@@ -316,13 +326,13 @@ Contact us today and move forward on the path of digital future.<br><br>
 
 /* Pulse Animation */
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.6); }
-  70% { box-shadow: 0 0 0 15px rgba(255, 0, 0, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3); }
+  70% { box-shadow: 0 0 0 15px rgba(0, 0, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); }
 }
 </style>
 
-<!-- JS for Scroll Button -->
+<!-- JavaScript -->
 <script>
 window.onscroll = function () {
   document.getElementById("scrollBtn").style.display = 
