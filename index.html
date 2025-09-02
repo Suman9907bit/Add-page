@@ -35,7 +35,7 @@
     .menu-toggle{display:none;font-size:26px;cursor:pointer;}
     .toggle-btn{background:none;border:none;color:#fff;font-size:22px;cursor:pointer;margin-left:10px;}
 
-@media(max-width:768px){
+    @media(max-width:768px){
       nav ul{display:none;flex-direction:column;background:teal;position:absolute;top:60px;left:0;width:80%;padding:10px 18px;}
       nav ul.show{display:flex;}
       .menu-toggle{display:block;}
@@ -65,9 +65,30 @@
       color:#ffdd57;
     }
 
-    /* Hero */
-    .hero{margin-top:70px;}
-    .hero img{width:100%;height:auto;display:block;}
+    /* Hero Banner Slider */
+    .hero{margin-top:58px;position:relative;width:100%;height:400px;overflow:hidden;}
+    .slide{
+      position:absolute;width:100%;height:100%;
+      opacity:0;transition:opacity 1s ease-in-out;
+      background-size:cover;background-position:center;
+    }
+    .slide.active{opacity:1;}
+
+    .slide.anim1.active{animation:zoomIn 5s ease-in-out;}
+    .slide.anim2.active{animation:slideLeft 27s ease-in-out;}
+    .slide.anim3.active{animation:slideright 10s ease-in-out;}
+
+    @keyframes zoomIn{from{transform:scale(1.1);}to{transform:scale(1);}}
+   @keyframes fadeIn {
+  from { opacity: 15; }
+  to { opacity: 19; }
+}
+
+    @keyframes slideUp{from{transform:translateY(100%);}to{transform:translateY(0);}}
+
+    @media(max-width:768px){.hero{height:250px;}}
+    @media(max-width:480px){.hero{height:200px;}}
+
     marquee{background:#198ca8;color:#fff;font-size:20px;padding:10px 0;}
 
     /* Section */
@@ -142,8 +163,6 @@
         <li><a href="https://suman9907bit.github.io/Add-page/">Home</a></li>
         <li><a href="https://suman9907bit.github.io/Addpages/">About</a></li>
         <li><a href="https://suman9907bit.github.io/Gellary/">Gallery</a></li>
-
-        <!-- Calendar dropdown -->
         <li class="dropdown">
           <a href="#">Calendar ▾</a>
           <ul class="dropdown-menu">
@@ -151,7 +170,6 @@
             <li><a href="https://suman9907bit.github.io/Manycalculator/">Calculation</a></li>
           </ul>
         </li>
-
         <li><a href="https://suman9907bit.github.io/internet-page/">Social Media</a></li>
         <li><a href="https://suman9907bit.github.io/Contact/">Contact</a></li>
         <li><a href="https://suman9907bit.github.io/syber-information/">Cyber Info</a></li>
@@ -161,162 +179,176 @@
   </div>
 </header>
 
-<!-- Hero -->
+<!-- Hero Banner Slider -->
 <div class="hero">
-  <img src="https://lh3.googleusercontent.com/p/AF1QipNWQlqfgFJS24RIP12t1X6-gFkjrcOAGXyOOAe8=s1360-w1360-h1020-rw" alt="">
+  <div class="slide anim1 active" style="background-image:url('https://lh3.googleusercontent.com/p/AF1QipPR8eiX26uST-rqePXXXdVmJYBNpRfDD2KGM8bB=s1360-w1360-h1020-rw');"></div>
+  <div class="slide anim2" style="background-image:url('https://lh3.googleusercontent.com/p/AF1QipNWQlqfgFJS24RIP12t1X6-gFkjrcOAGXyOOAe8=s1360-w1360-h1020-rw');"></div>
+  <div class="slide anim3" style="background-image:url('https://emscrm.com/wp-content/uploads/2021/06/5-Reasons-to-Work-in-a-Call-Center-.png');"></div>
 </div>
+
 <marquee>Welcome to Jana Online Service (JOS) Private Limited | 24x7 Service | Contact: 9907992247 / 6297726894</marquee>
 
+<!-- আপনার নিচের কন্টেন্ট আগের মতোই থাকবে -->
 <center>
 <image src="https://thumbs.dreamstime.com/b/business-woman-working-laptop-computer-office-63543303.jpg" width="100%" ><br>
 <image src="https://maitys.in/assets/images/why.png" width="43%" >
 <image src="https://png.pngtree.com/png-clipart/20250116/original/pngtree-computer-guy-working-png-image_19458782.png" width="43%" >
 </center>
 
-<!-- Features -->
-<section>
-  <h2>Our Best Features</h2>
-  <div class="card">
-    <p>We make everything user-friendly so you can focus on growing your business. We create transparent workflow, as a result we help you understand your files with simplicity.</p>
-    <ul>
-      <li><b>24x7 Support:</b> Our friendly staff are always ready to answer your queries.</li>
-      <li><b>Competitive Price:</b> Affordable and timely delivery helps your business grow.</li>
-    </ul>
-  </div>
+<!-- Features --><section>  <h2>Our Best Features</h2>  <div class="card"><p>We make everything user-friendly so you can focus on growing your business. We create transparent workflow, as a result we help you understand your files with simplicity.</p>
 
-  <h2>Business Partners</h2>
-  <div class="card biz-card" style="background:#198ca8;color:#fff;">
-    <img src="https://lh3.googleusercontent.com/p/AF1QipM7gv7GnmfMx-lMaqlGwInq3xfvFwtoVW2nptZj=w298-h298-k-no" alt="">
-    <div class="biz-info">
-      <h3>Jana Online Service</h3>
-      <p>Kakdwip, South 24 Pgs, WB - 743347</p>
-      <p>Mr. Suman Jana | +91 9907992247</p>
-      <a href="https://suman9907bit.github.io/JOS/" class="visit-btn">Visit Now</a>
-    </div>
-  </div>
+<ul>
 
-  <div class="card biz-card" style="background:#106578;color:#fff;">
-    <img src="https://www.mitcomputer.in/images/alamgir.png" alt="">
-    <div class="biz-info">
-      <h3>Maamtaj Info-Tech</h3>
-      <p>Kakdwip, South 24 Pgs, WB - 743347</p>
-      <p>Mr. Alomgir Hossen | +91 9883685143</p>
-      <a href="https://www.mitcomputer.in/" class="visit-btn">Visit Now</a>
-    </div>
-  </div>
-</section>
+  <li><b>24x7 Support:</b> Our friendly staff are always ready to answer your queries.</li>
 
-<image src="https://emscrm.com/wp-content/uploads/2021/06/5-Reasons-to-Work-in-a-Call-Center-.png" width="100%">
+  <li><b>Competitive Price:</b> Affordable and timely delivery helps your business grow.</li>
 
- <center>
-    <Div class="suman">
-      <buttn class ="suman-button">
-        <b>Massage Mr.Suman  to do business </b>
-      </button>
-      <div class="suman-content"><center>
-        <div style="background-color:none;margin:25px;border-radius:10px;width:70%;
-        box-shadow:0px 8px 36px BLACK;"><center>
-        <br>
-        <h1 style="color:teal">Send Us Message</h1></center> 
-        Complete the form below so<br> we can talk about your vision <br>or 
-        goal and how we might <br>help.<br><br>
-        <form action="https://formsubmit.co/janaonlineservice4@gmail.com" method="POST">
-          <input type="text" name="Name" placeholder="Name" style="width:90%; height:30px; background-color:white;"><br><br>
-          <input type="Number" name="Mobile No" placeholder="Pleace enter your mobile no " style="width:90%; height:30px; background-color:white;"><br><br>
-          <textarea name="massage" placeholder="how can help you?"style="width:90%; height:80px; background-color:white;"></textarea><br><br><br><br><br> 
-          <input type="submit" value="SEND MESSAGE" style="width:199px; height:40px;"></form>
-        <br><h5 style="color:red">Mail by Mr.suman jana</h5></div></center><br><br>
-      </div><br><br>
-    </div>
- </center>
+</ul>
 
-<!-- Map -->
-<section>
-<center><image src="https://media.baamboozle.com/uploads/images/55040/1629768058_441631_gif-url.gif" height="200px"></center>
-  <h2>Find Us on Map</h2>
-  <iframe src="https://www.google.com/maps?q=Jana+Online+Service+Kakdwip&output=embed"></iframe>
-</section>
+  </div>  <h2>Business Partners</h2>  <div class="card biz-card" style="background:#198ca8;color:#fff;"><img src="https://lh3.googleusercontent.com/p/AF1QipM7gv7GnmfMx-lMaqlGwInq3xfvFwtoVW2nptZj=w298-h298-k-no" alt="">
 
-<!-- Floating Buttons -->
-<div class="contact-menu">
-  <a href="tel:+919907992247" class="call-btn"><img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png"/></a>
-  <a href="https://wa.me/919907992247" target="_blank" class="whatsapp-btn"><img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"/></a>
-</div>
+<div class="biz-info">
 
-<!-- Scroll Top -->
-<button onclick="window.scrollTo({top:0,behavior:'smooth'})" id="scrollBtn">↑</button>
+  <h3>Jana Online Service</h3>
 
-<!-- Notice -->
-<div class="notice-overlay" id="noticeBox">
-  <div class="notice-modal">
-    <p><image src="https://lh3.googleusercontent.com/p/AF1QipOs9Y1a6cIKBupkvZ4HKTSo5N5cAsda9CAWY1E6=s1360-w1360-h1020-rw" width="100%"><br><br>
-    <center><a href="https://suman9907bit.github.io/syber-information/" style="text-decoration:none; color:red"><b>Syber Information</b></a></center>
-    </p><br>
-    <center><button onclick="document.getElementById('noticeBox').classList.remove('open')">Close</button></center>
-  </div>
-</div>
+  <p>Kakdwip, South 24 Pgs, WB - 743347</p>
 
-<!-- Footer -->
-<footer>
-  <div class="footer-container">
-    <div class="footer-col">
-      <h3>About Us</h3>
-      <p>Jana Online Service (JOS) Pvt. Ltd. offers digital services, online forms, Aadhar update, computer training, cyber cafe and more.</p>
-    </div>
-    <div class="footer-col">
-      <h3>Quick Links</h3>
-      <a href="https://suman9907bit.github.io/Add-page/">Home</a>
-      <a href="https://suman9907bit.github.io/Addpages/">About</a>
-      <a href="https://suman9907bit.github.io/JOS/">Services</a>
-      <a href="https://suman9907bit.github.io/Contact/">Contact</a>
-    </div>
-    <div class="footer-col">
-       <h3>Contact Info</h3>
+  <p>Mr. Suman Jana | +91 9907992247</p>
 
-  <p><i class="fas fa-map-marker-alt"></i> Kakdwip, South 24 Pgs, WB</p>
-
-  <p><i class="fas fa-envelope"></i> info@example.com</p>
-
-  <p><i class="fas fa-phone"></i> +91 9907992247</p>
-
-  <div class="social-icons">
-
-    <a href="https://www.facebook.com/share/1E3x1BkLnZ/"><i class="fab fa-facebook"></i></a>
-
-    <a href=""><i class="fab fa-instagram"></i></a>
-
-    <a href="https://www.youtube.com/@Statusforsanjuvaia"><i class="fab fa-youtube"></i></a>
-
-    <a href="https://wa.me/919907992247"><i class="fab fa-whatsapp"></i></a>
-
-  </div>
+  <a href="https://suman9907bit.github.io/JOS/" class="visit-btn">Visit Now</a>
 
 </div>
 
-  </div>  <div class="footer-bottom"><p>© 2025 Jana Online Service | All Rights Reserved</p>
+  </div>  <div class="card biz-card" style="background:#106578;color:#fff;"><img src="https://www.mitcomputer.in/images/alamgir.png" alt="">
 
-  </div></footer><script>
-  
+<div class="biz-info">
+
+  <h3>Maamtaj Info-Tech</h3>
+
+  <p>Kakdwip, South 24 Pgs, WB - 743347</p>
+
+  <p>Mr. Alomgir Hossen | +91 9883685143</p>
+
+  <a href="https://www.mitcomputer.in/" class="visit-btn">Visit Now</a>
+
+</div>
+
+  </div></section><image src="https://emscrm.com/wp-content/uploads/2021/06/5-Reasons-to-Work-in-a-Call-Center-.png" width="100%"> <center><Div class="suman">
+
+  <buttn class ="suman-button">
+
+    <b>Massage Mr.Suman  to do business </b>
+
+  </button>
+
+  <div class="suman-content"><center>
+
+    <div style="background-color:none;margin:25px;border-radius:10px;width:70%;
+
+    box-shadow:0px 8px 36px BLACK;"><center>
+
+    <br>
+
+    <h1 style="color:teal">Send Us Message</h1></center> 
+
+    Complete the form below so<br> we can talk about your vision <br>or 
+
+    goal and how we might <br>help.<br><br>
+
+    <form action="https://formsubmit.co/janaonlineservice4@gmail.com" method="POST">
+
+      <input type="text" name="Name" placeholder="Name" style="width:90%; height:30px; background-color:white;"><br><br>
+
+      <input type="Number" name="Mobile No" placeholder="Pleace enter your mobile no " style="width:90%; height:30px; background-color:white;"><br><br>
+
+      <textarea name="massage" placeholder="how can help you?"style="width:90%; height:80px; background-color:white;"></textarea><br><br><br><br><br> 
+
+      <input type="submit" value="SEND MESSAGE" style="width:199px; height:40px;"></form>
+
+    <br><h5 style="color:red">Mail by Mr.suman jana</h5></div></center><br><br>
+
+  </div><br><br>
+
+</div>
+
+ </center><!-- Map --><section><center><image src="https://media.baamboozle.com/uploads/images/55040/1629768058_441631_gif-url.gif" height="200px"></center>  <h2>Find Us on Map</h2>  <iframe src="https://www.google.com/maps?q=Jana+Online+Service+Kakdwip&output=embed"></iframe></section><!-- Floating Buttons --><div class="contact-menu"><a href="tel:+919907992247" class="call-btn"><img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png"/></a>
+
+<a href="https://wa.me/919907992247" target="_blank" class="whatsapp-btn"><img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"/></a>
+
+</div><!-- Scroll Top --><button onclick="window.scrollTo({top:0,behavior:'smooth'})" id="scrollBtn">↑</button>
+
+<!-- Notice --><div class="notice-overlay" id="noticeBox">  <div class="notice-modal"><p><image src="https://lh3.googleusercontent.com/p/AF1QipOs9Y1a6cIKBupkvZ4HKTSo5N5cAsda9CAWY1E6=s1360-w1360-h1020-rw" width="100%"><br><br>
+
+<center><a href="https://suman9907bit.github.io/syber-information/" style="text-decoration:none; color:red"><b>Syber Information</b></a></center>
+
+</p><br>
+
+<center><button onclick="document.getElementById('noticeBox').classList.remove('open')">Close</button></center>
+
+  </div></div><!-- Footer --><footer>  <div class="footer-container"><div class="footer-col">
+
+  <h3>About Us</h3>
+
+  <p>Jana Online Service (JOS) Pvt. Ltd. offers digital services, online forms, Aadhar update, computer training, cyber cafe and more.</p>
+
+</div>
+
+<div class="footer-col">
+
+  <h3>Quick Links</h3>
+
+  <a href="https://suman9907bit.github.io/Add-page/">Home</a>
+
+  <a href="https://suman9907bit.github.io/Addpages/">About</a>
+
+  <a href="https://suman9907bit.github.io/JOS/">Services</a>
+
+  <a href="https://suman9907bit.github.io/Contact/">Contact</a>
+
+</div>
+
+<div class="footer-col">
+
+   <h3>Contact Info</h3>
+
+  <p><i class="fas fa-map-marker-alt"></i> Kakdwip, South 24 Pgs, WB</p>  <p><i class="fas fa-envelope"></i> info@example.com</p>  <p><i class="fas fa-phone"></i> +91 9907992247</p>  <div class="social-icons"><a href="https://www.facebook.com/share/1E3x1BkLnZ/"><i class="fab fa-facebook"></i></a>
+
+
+
+<a href=""><i class="fab fa-instagram"></i></a>
+
+
+
+<a href="https://www.youtube.com/@Statusforsanjuvaia"><i class="fab fa-youtube"></i></a>
+
+
+
+<a href="https://wa.me/919907992247"><i class="fab fa-whatsapp"></i></a>
+
+  </div></div>  </div>  <div class="footer-bottom"><p>© 2025 Jana Online Service | All Rights Reserved</p>  </div></footer>
+
+<!-- Scripts -->
+<script>
+  // Hero Slider
+  const slides=document.querySelectorAll('.slide');
+  let index=0;
+  function showSlide(){
+    slides.forEach(s=>s.classList.remove('active'));
+    index=(index+1)%slides.length;
+    slides[index].classList.add('active');
+  }
+  setInterval(showSlide,5000);
+
   // Scroll btn
-  
   window.onscroll=function(){document.getElementById("scrollBtn").style.display=(window.scrollY>100)?"block":"none";}
-  
   // Notice auto show
-  
   window.onload=function(){setTimeout(()=>{document.getElementById('noticeBox').classList.add('open');},800);}
-  
-
-  
   // Toggle Mode
-  
   const toggleBtn=document.getElementById("toggleBtn");const body=document.body;
-  
   toggleBtn.addEventListener("click",()=>{body.classList.toggle("dark");
-  
     if(body.classList.contains("dark")){toggleBtn.innerHTML='<i class="fas fa-sun"></i>';localStorage.setItem("mode","dark");}
-  
     else{toggleBtn.innerHTML='<i class="fas fa-moon"></i>';localStorage.setItem("mode","light");}});
-  
   if(localStorage.getItem("mode")==="dark"){body.classList.add("dark");toggleBtn.innerHTML='<i class="fas fa-sun"></i>';}
-  
-</script></body></html> 
+</script>
+</body>
+</html>
