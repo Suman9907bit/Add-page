@@ -27,16 +27,18 @@
 
     /* Navbar */
     header{background:#198ca8;color:#fff;position:fixed;top:0;left:0;width:100%;z-index:999;box-shadow:0 2px 10px rgba(0,0,0,.2);}
-    .nav-container{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;}
+    .nav-container{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;}
     .nav-logo{font-size:22px;font-weight:700;}
     nav ul{display:flex;list-style:none;gap:20px;}
-    nav a{color:white;text-decoration:none;font-weight:600;transition:.3s;}
+    nav a{color:white;text-decoration:none;font-weight:600;transition:3s;}
     nav a:hover{color:#ffdd57;}
     .menu-toggle{display:none;font-size:26px;cursor:pointer;}
-    .toggle-btn{background:none;border:none;color:#fff;font-size:22px;cursor:pointer;margin-left:10px;}
+    .toggle-btn{background:none;border:none;color:#fff;font-size:22px;cursor:pointer;margin-left:12px;}
 
     @media(max-width:768px){
-      nav ul{display:none;flex-direction:column;background:teal;position:absolute;top:60px;left:0;width:80%;padding:10px 18px;}
+      nav ul{display:none;flex-direction:column;background:rgba(0, 128, 138, 0.6);position:absolute;top:60px;left:0;width:60%;padding:10px 18px;
+        border-bottom: 7px solid rgba(0,128,128,1);
+      }
       nav ul.show{display:flex;}
       .menu-toggle{display:block;}
     }
@@ -47,7 +49,7 @@
       display:none;
       position:relative;
       top:100%;left:0;
-      background:teal;
+      background:rgba(0,128,128,.5);
       flex-direction:column;
       min-width:180px;
       padding:10px 14px;
@@ -141,6 +143,21 @@
     body.dark header{background:#222;}
     body.dark footer{background:#000;color:#aaa;}
     body.dark .footer-col a:hover{color:#90e0ef;}
+  .avatar-wrap{
+  width: 7vw;         /* responsive width, তুমি px বা % দিতে পারো */
+  max-width: 60px;
+  aspect-ratio: 1/1;   /* square রাখে */
+  border-radius: 50%;
+  overflow: hidden;    /* ভিতরের ছবির অতিরিক্ত অংশ লুকায় */
+}
+.avatar-wrap img{
+  width: 5px;
+  height: 5px;
+  object-fit: cover;   /* সুন্দরভাবে crop করে ভরে দেবে */
+  display: block;
+}
+
+  
   </style>
 </head>
 <body>
@@ -148,7 +165,9 @@
 <!-- Navbar -->
 <header>
   <div class="nav-container">
-    <div class="nav-logo">Jana Online Service</div>
+    <div class="nav-logo">
+      <image class="avatar-wrap" src="https://lh3.googleusercontent.com/p/AF1QipP1F4BrDvZdgpO1RDoGI2DFyJjnrfBmpkjeKwZN=s1360-w1360-h1020-rw" >
+      Jana Online Service</div>
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('show')">&#9776;</div>
       <button class="toggle-btn" id="toggleBtn"><i class="fas fa-moon"></i></button>
@@ -241,12 +260,12 @@
   <buttn class ="suman-button">
 
     <b>Massage Mr.Suman  to do business </b>
-
+    
   </button>
 
   <div class="suman-content"><center>
 
-    <div style="background-color:none;margin:25px;border-radius:10px;width:70%;
+    <div style="background-color:none;margin:25px;border-radius:10px;width:90%;
 
     box-shadow:0px 8px 36px BLACK;"><center>
 
@@ -355,5 +374,3 @@
 </script>
 </body>
 </html>
-
-
