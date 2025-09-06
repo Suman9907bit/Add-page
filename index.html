@@ -21,23 +21,50 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <style>
+   <style>
     *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
     body{background:#f9fafc;color:#222;line-height:1.6;transition:.3s;}
 
     /* Navbar */
-    header{background:#198ca8;color:#fff;position:fixed;top:0;left:0;width:100%;z-index:999;box-shadow:0 2px 10px rgba(0,0,0,.2);}
-    .nav-container{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;}
+    header{
+      background:#198ca8;
+      color:#fff;
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:999;
+      box-shadow:0 2px 10px rgba(0,0,0,.2);
+      height:65px; /* fixed height */
+    }
+    .nav-container{
+      max-width:1200px;
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 18px;
+      height:100%;
+    }
     .nav-logo{font-size:22px;font-weight:700;}
     nav ul{display:flex;list-style:none;gap:20px;}
-    nav a{color:white;text-decoration:none;font-weight:600;transition:3s;}
+    nav a{color:white;text-decoration:none;font-weight:600;transition:.3s;}
     nav a:hover{color:#ffdd57;}
     .menu-toggle{display:none;font-size:26px;cursor:pointer;}
     .toggle-btn{background:none;border:none;color:#fff;font-size:22px;cursor:pointer;margin-left:12px;}
 
     @media(max-width:768px){
-      nav ul{display:none;flex-direction:column;background:rgba(0, 128, 138, 0.6);position:absolute;top:60px;left:0;width:60%;padding:10px 18px;
-        border-bottom: 7px solid rgba(0,128,128,1);
+      nav ul{
+        display:none;
+        flex-direction:column;
+        background:rgba(0, 128, 138, 0.75);
+        position:absolute;
+        top:65px; /* header নিচে */
+        left:0;
+        width:70%;
+        padding:15px;
+
+        border-bottom:7px solid rgba(0,128,128,1);
       }
       nav ul.show{display:flex;}
       .menu-toggle{display:block;}
@@ -47,14 +74,15 @@
     nav ul li{position:relative;}
     nav ul li ul.dropdown-menu{
       display:none;
-      position:relative;
+      position:absolute; /* fixed */
       top:100%;left:0;
-      background:rgba(0,128,128,.5);
+      background:rgba(0,128,128,.95);
       flex-direction:column;
       min-width:180px;
       padding:10px 14px;
       border-radius:6px;
       box-shadow:0 4px 12px rgba(0,0,0,.2);
+      z-index:9999;
     }
     nav ul li:hover ul.dropdown-menu{display:flex;}
     nav ul li ul li a{
@@ -67,7 +95,28 @@
       color:#ffdd57;
     }
 
+    /* Fix for mobile dropdown */
+    @media(max-width:768px){
+      nav ul li .dropdown-menu{
+        position:relative;
+        top:0;
+        box-shadow:none;
+      }
+    }
+    .dropdown-menu.show{display:flex !important;}
+
     /* Hero Banner Slider */
+    .hero{margin-top:65px;position:relative;width:100%;height:450px;overflow:hidden;}
+    .slide{position:absolute;width:100%;height:100%;opacity:0;transition:opacity 1s ease-in-out;
+      background-size:cover;background-position:center;}
+    .slide.active{opacity:1;}
+    .slide.anim1.active{animation:zoomIn 5s ease-in-out;}
+    @keyframes zoomIn{from{transform:scale(1.1);}to{transform:scale(1);}}
+    @media(max-width:768px){.hero{height:250px;}}
+    @media(max-width:480px){.hero{height:200px;}}
+
+
+/* Hero Banner Slider */
     .hero{margin-top:65px;position:relative;width:100%;height:450px;overflow:hidden;}
     .slide{
       position:absolute;width:100%;height:100%;
@@ -144,7 +193,54 @@
     body.dark footer{background:#000;color:#aaa;}
     body.dark .footer-col a:hover{color:#90e0ef;}
 
-  
+
+ .form-container {
+      width: 90%;
+      max-width: 85%;
+      background: #fff;
+      margin: 40px auto;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0px 8px 25px rgba(0,0,0,0.2);
+    }
+    .form-container h1 {
+      text-align: center;
+      color: teal;
+      margin-bottom: 20px;
+    }
+    .form-container input,
+    .form-container select,
+    .form-container textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    .form-container textarea {
+      height: 120px;
+    }
+    .form-container input[type="submit"] {
+      background: teal;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      transition: 0.3s;
+    }
+    .form-container input[type="submit"]:hover {
+      background: darkslategray;
+    }
+    .form-footer {
+      text-align: center;
+      margin-top: 15px;
+    }
+    .form-footer a {
+      text-decoration: none;
+      color: teal;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -190,14 +286,16 @@
 
 <!-- Hero Banner Slider -->
 <div class="hero">
-  <div class="slide anim1 active" style="background-image:url('https://lh3.googleusercontent.com/p/AF1QipOF0dU5inO7w1rx4p5e3MD_FrHN9nFAJ7FlISvH=s1360-w1360-h1020-rw');"></div>
+
+<div class="slide anim1 active" style="background-image:url('https://lh3.googleusercontent.com/p/AF1QipOF0dU5inO7w1rx4p5e3MD_FrHN9nFAJ7FlISvH=s1360-w1360-h1020-rw');"></div>
   <div class="slide anim2" style="background-image:url('https://lh3.googleusercontent.com/p/AF1QipOF0dU5inO7w1rx4p5e3MD_FrHN9nFAJ7FlISvH=s1360-w1360-h1020-rw');"></div>
   <div class="slide anim3" style="background-image:url('https://lh3.googleusercontent.com/p/AF1QipOF0dU5inO7w1rx4p5e3MD_FrHN9nFAJ7FlISvH=s1360-w1360-h1020-rw');"></div>
 
 
-  <div class="slide anim1 active" style="background-image:url('https://lh3.googleusercontent.com/p/AF1QipOF0dU5inO7w1rx4p5e3MD_FrHN9nFAJ7FlISvH=s1360-w1360-h1020-rw');"></div>
-  <div class="slide anim2" style="background-image:url('https://lh3.googleusercontent.com/p/AF1QipOF0dU5inO7w1rx4p5e3MD_FrHN9nFAJ7FlISvH=s1360-w1360-h1020-rw');"></div>
-  <div class="slide anim3" style="background-image:url('https://lh3.googleusercontent.com/p/AF1QipOF0dU5inO7w1rx4p5e3MD_FrHN9nFAJ7FlISvH=s1360-w1360-h1020-rw');"></div>
+<div class="slide anim1 active" style="background-image:url('https://lh3.googleusercontent.com/p/AF1QipPFA0Tuu9ffla99leaOOAqqD-jIZ_UHXO_o0FWR=s1360-w1360-h1020-rw');"></div>
+  <div class="slide anim2" style="background-image:url('https://lh3.googleusercontent.com/p/AF1QipPFA0Tuu9ffla99leaOOAqqD-jIZ_UHXO_o0FWR=s1360-w1360-h1020-rw');"></div>
+  <div class="slide anim3" style="background-image:url('https://lh3.googleusercontent.com/p/AF1QipPFA0Tuu9ffla99leaOOAqqD-jIZ_UHXO_o0FWR=s1360-w1360-h1020-rw');"></div>
+
 
 
 
@@ -208,7 +306,7 @@
 <!-- আপনার নিচের কন্টেন্ট আগের মতোই থাকবে -->
 <center>
 
-<image src="D:\2025\Creat photo\jos.png" width="100%" style="margin-top:-8px">
+<image src="https://lh3.googleusercontent.com/p/AF1QipPMiUrOUpY72HnBfhMZTfT0kO9VXXlu1mZ125z9=s1360-w1360-h1020-rw" width="100%" style="margin-top:-8px">
 
 </center>
 
@@ -250,43 +348,69 @@
 
 </div>
 
-  </div></section><image src="https://emscrm.com/wp-content/uploads/2021/06/5-Reasons-to-Work-in-a-Call-Center-.png" width="100%"> <center><Div class="suman">
+  </div></section>
 
-  <buttn class ="suman-button">
 
-    <b>Massage Mr.Suman  to do business </b>
+<image src="https://www.customerservicemanager.com/wp-content/uploads/2020/05/callcenterop.jpg" width="100%">  
+
+
+
+
+ <div class="form-container">
+    <h1>Send Us a Message</h1>
+    <p style="text-align:center;">Complete the form below so we can talk about your vision or goal and how we might help.</p>
     
-  </button>
-
-  <div class="suman-content"><center>
-
-    <div style="background-color:none;margin:25px;border-radius:10px;width:90%;
-
-    box-shadow:0px 8px 36px BLACK;"><center>
-
-    <br>
-
-    <h1 style="color:teal">Send Us Message</h1></center> 
-
-    Complete the form below so<br> we can talk about your vision <br>or 
-
-    goal and how we might <br>help.<br><br>
-
     <form action="https://formsubmit.co/janaonlineservice4@gmail.com" method="POST">
+      
+      <input type="text" name="Name" placeholder="Enter your name" required>
+      <input type="number" name="Mobile" placeholder="Enter your mobile no" required>
 
-      <input type="text" name="Name" placeholder="Name" style="width:90%; height:30px; background-color:white;"><br><br>
+      <!-- Service Option -->
+      <select id="service" name="Type of Service" required>
+        <option value="">-- Select a Service --</option>
+        <option value="Web site Creat">Web site Creat</option>
+        <option value="Graphics Desing">Graphics Desing</option>
+        <option value="Pan Card Creat">Pan Card Creat</option>
+        <option value="Train Ticket Booking">Train Ticket Booking</option>
+        <option value="Flight Ticket booking">Flight Ticket booking</option>
+        <option value="Personal Online Work">Personal Online Work</option>
+        <option value="Others">Others</option>
+      </select>
 
-      <input type="Number" name="Mobile No" placeholder="Pleace enter your mobile no " style="width:90%; height:30px; background-color:white;"><br><br>
+      <!-- Message -->
+      <textarea id="message" name="Message" placeholder="How can we help you?"></textarea>
 
-      <textarea name="massage" placeholder="how can help you?"style="width:90%; height:80px; background-color:white;"></textarea><br><br><br><br><br> 
+      <input type="submit" value="SEND MESSAGE">
+    </form>
 
-      <input type="submit" value="SEND MESSAGE" style="width:199px; height:40px;"></form>
+    <div class="form-footer">
+      <p>Need more info? <a href="https://suman9907bit.github.io/Contact/">Visit our Contact Page</a></p>
+    </div>
+  </div>
 
-    <br><h5 style="color:red">Mail by Mr.suman jana</h5></div></center><br><br>
+  <script>
+    const serviceSelect = document.getElementById("service");
+    const messageBox = document.getElementById("message");
 
-  </div><br><br>
+    const serviceDescriptions = {
+      "Web site Creat": "Hello, I am interested in creating a website. Please provide me with the details and cost.",
+      "Graphics Desing": "Hi, I want professional graphic design services. Can you share some samples and pricing?",
+      "Pan Card Creat": "Hello, I need assistance with Pan Card creation. Please guide me through the process.",
+      "Train Ticket Booking": "Hi, I would like to book a train ticket. Kindly provide me with the details.",
+      "Flight Ticket booking": "Hello, I need help with flight ticket booking. Please let me know the requirements.",
+      "Personal Online Work": "Hi, I want support for personal online work. Can you please explain the process?"
+    };
 
-</div>
+    serviceSelect.addEventListener("change", function() {
+      const selected = serviceSelect.value;
+      if (selected === "Others") {
+        messageBox.value = ""; // Others হলে খালি থাকবে
+        messageBox.placeholder = "Please type your custom message here...";
+      } else {
+        messageBox.value = serviceDescriptions[selected] || "";
+      }
+    });
+  </script>
 
  </center><!-- Map --><section><center><image src="https://media.baamboozle.com/uploads/images/55040/1629768058_441631_gif-url.gif" height="200px"></center>  <h2>Find Us on Map</h2>  <iframe src="https://www.google.com/maps?q=Jana+Online+Service+Kakdwip&output=embed"></iframe></section><!-- Floating Buttons --><div class="contact-menu"><a href="tel:+919907992247" class="call-btn"><img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png"/></a>
 
@@ -300,9 +424,18 @@
 
 </p><br>
 
+
 <center><button onclick="document.getElementById('noticeBox').classList.remove('open')">Close</button></center>
 
-  </div></div><!-- Footer --><footer>  <div class="footer-container"><div class="footer-col">
+
+
+
+  </div></div>
+
+<image src="https://media.istockphoto.com/id/1096519286/photo/inner-city-road.jpg?s=612x612&w=0&k=20&c=JGrRLAuxUTNye8b7gYQFRPI7fpHp2L9f0YXUNKMANh0=" width="100%">
+
+
+<!-- Footer --><footer>  <div class="footer-container"><div class="footer-col">
 
   <h3>About Us</h3>
 
