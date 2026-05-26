@@ -555,30 +555,34 @@ Trusted Life Mitra by your side.</p>
   toggleBtn.addEventListener("click",()=>{body.classList.toggle("dark");
     if(body.classList.contains("dark")){toggleBtn.innerHTML='<i class="fas fa-sun"></i>';localStorage.setItem("mode","dark");}
     else{toggleBtn.innerHTML='<i class="fas fa-moon"></i>';localStorage.setItem("mode","light");}});
-  if(localStorage.getItem("mode")==="dark"){body.classList.add("dark");toggleBtn.innerHTML='<i class="fas fa-sun"></i>';window.onload=function(){
+  if(localStorage.getItem("mode")==="dark"){body.classList.add("dark");toggleBtn.innerHTML='<i class="fas fa-sun"></i>';}
+</script><script>
+(function () {
 
-  // Notice box
-  setTimeout(()=>{
-    document.getElementById('noticeBox').classList.add('open');
-  },800);
+    function welcomeVoice() {
 
-  // Auto Voice
-  setTimeout(()=>{
+        let speech = new SpeechSynthesisUtterance(
+            "Welcome to Jana Online Service"
+        );
 
-    let speech = new SpeechSynthesisUtterance(
-      "Welcome to Jana Online Service"
-    );
+        speech.lang = "en-US";
+        speech.volume = 1;
+        speech.rate = 0.9;
+        speech.pitch = 1;
 
-    speech.lang = "en-US";
-    speech.volume = 1;
-    speech.rate = 0.9;
-    speech.pitch = 1;
-
-    window.speechSynthesis.speak(speech);
-
-  },1000);
-
+        window.speechSynthesis.speak(speech);
     }
+
+    // Auto voice when website opens
+    window.addEventListener("load", () => {
+
+        setTimeout(() => {
+            welcomeVoice();
+        }, 1200);
+
+    });
+
+})();
 </script>
 </body>
 </html>
