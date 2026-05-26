@@ -482,7 +482,7 @@ Trusted Life Mitra by your side.</p>
 </p><br>
 
 
-<center><button onclick="document.getElementById('noticeBox').classList.remove('open')">Close</button></center>
+<center><button onclick="closeNoticeAndSpeak()">Close</button></center>
 
 
 
@@ -611,6 +611,24 @@ document.getElementById("voiceBtn").addEventListener("click", function () {
     playWelcomeVoice();
 
 });
+</script><script>
+function closeNoticeAndSpeak() {
+
+    // Popup Close
+    document.getElementById('noticeBox').classList.remove('open');
+
+    // Voice
+    let speech = new SpeechSynthesisUtterance(
+        "Welcome to Jana Online Service"
+    );
+
+    speech.lang = "en-US";
+    speech.volume = 1;
+    speech.rate = 0.9;
+    speech.pitch = 1;
+
+    window.speechSynthesis.speak(speech);
+}
 </script>
 </body>
 </html>
