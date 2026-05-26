@@ -556,33 +556,61 @@ Trusted Life Mitra by your side.</p>
     if(body.classList.contains("dark")){toggleBtn.innerHTML='<i class="fas fa-sun"></i>';localStorage.setItem("mode","dark");}
     else{toggleBtn.innerHTML='<i class="fas fa-moon"></i>';localStorage.setItem("mode","light");}});
   if(localStorage.getItem("mode")==="dark"){body.classList.add("dark");toggleBtn.innerHTML='<i class="fas fa-sun"></i>';}
-</script><script>
-(function () {
+</script><!-- Fixed Voice Button -->
+<button id="voiceBtn">
+🔊
+</button>
 
-    function welcomeVoice() {
+<style>
+#voiceBtn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:60px;
+    height:60px;
+    border:none;
+    border-radius:50%;
+    background:#198ca8;
+    color:white;
+    font-size:28px;
+    cursor:pointer;
+    z-index:99999;
+    box-shadow:0 0 15px rgba(0,0,0,0.4);
+}
+</style>
 
-        let speech = new SpeechSynthesisUtterance(
-            "Welcome to Jana Online Service"
-        );
+<script>
+function playWelcomeVoice() {
 
-        speech.lang = "en-US";
-        speech.volume = 1;
-        speech.rate = 0.9;
-        speech.pitch = 1;
+    window.speechSynthesis.cancel();
 
-        window.speechSynthesis.speak(speech);
-    }
+    let speech = new SpeechSynthesisUtterance(
+        "Welcome to Jana Online Service"
+    );
 
-    // Auto voice when website opens
-    window.addEventListener("load", () => {
+    speech.lang = "en-US";
+    speech.volume = 1;
+    speech.rate = 0.9;
+    speech.pitch = 1;
 
-        setTimeout(() => {
-            welcomeVoice();
-        }, 1200);
+    window.speechSynthesis.speak(speech);
+}
 
-    });
+// Auto try
+window.addEventListener("load", function () {
 
-})();
+    setTimeout(() => {
+        playWelcomeVoice();
+    }, 1200);
+
+});
+
+// Fixed button click
+document.getElementById("voiceBtn").addEventListener("click", function () {
+
+    playWelcomeVoice();
+
+});
 </script>
 </body>
 </html>
