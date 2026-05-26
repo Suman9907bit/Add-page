@@ -617,21 +617,16 @@ function closeNoticeAndSpeak() {
     // Popup Close
     document.getElementById('noticeBox').classList.remove('open');
 
-    // Voice
     let speech = new SpeechSynthesisUtterance(
-        "Jana Online Service-এ আপনাকে আন্তরিক স্বাগতম!
-আমরা আনন্দিত যে আপনি আমাদের ওয়েবসাইটে এসেছেন।
-এখানে আপনি পাবেন দ্রুত, সহজ এবং বিশ্বস্ত অনলাইন সার্ভিস।
-আমাদের সাথে থাকার জন্য ধন্যবাদ ❤️
-Jana Online Service-এর সাথে সুন্দর একটি অভিজ্ঞতা উপভোগ করুন!"
-    );
+"Jana Online Service এ আপনাকে আন্তরিক স্বাগতম। আমরা আনন্দিত যে আপনি আমাদের ওয়েবসাইটে এসেছেন। এখানে আপনি পাবেন দ্রুত, সহজ এবং বিশ্বস্ত অনলাইন সার্ভিস। আমাদের সাথে থাকার জন্য ধন্যবাদ। Jana Online Service এর সাথে সুন্দর একটি অভিজ্ঞতা উপভোগ করুন।"
+);
 
-    speech.lang = "en-US";
-    speech.volume = 1;
-    speech.rate = 0.9;
-    speech.pitch = 1;
+speech.lang = "bn-BD";
+speech.volume = 1;
+speech.rate = 0.9;
+speech.pitch = 1;
 
-    window.speechSynthesis.speak(speech);
+window.speechSynthesis.speak(speech);
 }
 </script>
 </body>
